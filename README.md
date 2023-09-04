@@ -202,19 +202,16 @@ Turn in SQL queries in the file called solution.sql.
 ---
 
 ### Problem 7: Data Visualization.
-Here you are asked to create some histograms (graphs), by writing a python script that first runs a query, then produces a graph using the result of the query.
+* Here you are asked to create some histograms (graphs), by writing a python script that first runs a query, then produces a graph using the result of the query.
 
-Construct two histograms: the histogram of the number of collaborators, and the histogram of the number of publications. The first histograph will have these axes:
+ * Construct two histograms: the histogram of the number of collaborators, and the histogram of the number of publications. The first histograph will have these axes:
 
-the X axis is a number X=1,2,3,...
-the Y axis represents the number of authors with X collaborators: Y(0)= number of authors with 0 collaborators, Y(1) = number of authors with 1 collaborator, etc
-Similarly for the second histogram. Try using a log scale, or a log-log scale, and choose the most appropriate. Feel free to produce a very nice graph (not necessarily a histogram).
+  * the X axis is a number X=1,2,3,...
+  * the Y axis represents the number of authors with X collaborators: Y(0)= number of authors with 0 collaborators, Y(1) = number of authors with 1 collaborator, etc
+  * Similarly for the second histogram. Try using a log scale, or a log-log scale, and choose the most appropriate. Feel free to produce a very nice graph (not necessarily a histogram).
 
-Resources:
+* Resources:
 
-Accessing postgres from python tutorial (Links to an external site.); see also pythonpsql.py in the starter code
+* Accessing postgres from python tutorial (Links to an external site.); see also pythonpsql.py in the starter code
 Plotpy library (Links to an external site.)
 Turn in a file graph.py and the output it generated in a file graph.pdf
-
-Submitting your assignment
-You may submit your code multiple times; we will use the latest version you submit that arrives before the deadline. Put all your files(pubER.pdf, createPubSchema.sql, solution.sql, importPubData.sql, graph.py, graph.pdf) in a zipfile and upload to Canvas.
