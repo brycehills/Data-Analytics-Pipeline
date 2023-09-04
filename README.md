@@ -1,9 +1,9 @@
 ## Motivation: 
   * Implement a data analysis pipeline:
-    * 1. data acquisition
-    * 2. transformation and extraction
-    * 3. cleaning
-    * 4. analysis and sharing of results
+    1. data acquisition
+    2. transformation and extraction
+    3. cleaning
+    4. analysis and sharing of results
   * The data is DBLP (Links to an external site.)
 
 ### Resources: 
