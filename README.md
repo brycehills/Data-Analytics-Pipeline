@@ -4,9 +4,7 @@
 ![alt text](https://github.com/brycehills/StrassenVsCudaMM/blob/main/resources/timing.JPG)  
 Though t
   
-    
-   
-![alt text](https://github.com/brycehills/Data-Analytics-Pipeline/graph.pdf)  
+![alt text](https://github.com/brycehills/Data-Analytics-Pipeline/blob/main/pubER.pdf)  
 Additionally, 
 
 ### Objectives: To get familiar with the main components of the data analytic pipeline: schema design, data acquisition, data transformation, and querying.
