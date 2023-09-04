@@ -1,8 +1,6 @@
----
-### Motivation: implement a data analysis pipeline: data acquisition, transformation and extraction, cleaning, analysis and sharing of results. The data is DBLP (Links to an external site.), the reference citation website created and maintained by Michael Ley. 
+### Motivation: implement a data analysis pipeline: data acquisition, transformation and extraction, cleaning, analysis and sharing of results. The data is DBLP (Links to an external site.)
 
 ### Resources: 
-
 * postgres, MYSQL, or SQLLite
 * starter code
 ---
