@@ -1,5 +1,5 @@
 ## Motivation: 
-  * #### Implement a data analysis pipeline:
+  * ### Implement a data analysis pipeline:
     * data acquisition
     * transformation and extraction
     * cleaning
