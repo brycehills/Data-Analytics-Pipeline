@@ -68,18 +68,18 @@ $ psql dblp
 
 * then type in your SQL commands. Remember three special commands:
 
-\q -- quit psql
+  * \q -- quit psql
 \h -- help
 \? -- help for meta commands
 Next, design the SQL tables that implement your conceptual schema (the E/R diagram). We will call this database schema the PubSchema. Write create Table SQL statements, e.g.:
 
-create Table Author (...);
+  * create Table Author (...);
 ...
 Choose int and text for all data types. Create keys, foreign keys, and unique constraints, as needed; you may either do it within CREATE TABLE, or postpone this for later and use ALTER TABLE. 
 
 * Write all your commands in a file called createPubSchema.sql. You can execute them in two ways. Start postgres interactively and copy/paste your commands one by one. Or, from the command line run:
 
-psql -f createPubSchema.sql dblp
+  * psql -f createPubSchema.sql dblp
 * Hint: for debugging purposes, insert drop Table commands at the beginning of the createPubSchema.sql file:
 
 drop table if exists Author;
@@ -96,12 +96,12 @@ Turn in the file createPubSchema.sql which contains all you create table stateme
 more dblp.xml
 * If needed, edit the wrapper.py  Download wrapper.pyand update the correct location of dblp.xml and the output files pubFile.txt and fieldFile.txt, then run:
 
-python wrapper.py
+  * python wrapper.py
 This will take several minutes, and produces two large files: pubFile.txt and fieldFile.txt. Before you proceed, make sure you understand what happened during this step, by looking inside these two files: they are tab-separated files, ready to be imported in postgres.
 
 * Next, edit the file createRawSchema.sql in the starter code to point to the correct path of pubFile.txt and fieldFile.txt: they must be absolute paths, e.g. /home/myname/pubFile.txt. Then run:
 
-psql -f createRawSchema.sql dblp
+  * psql -f createRawSchema.sql dblp
 This creates two tables, Pub and Field, then imports the data (which may take a few minutes). We will call these two tables RawSchema and RawData respectively.
 
 ---
