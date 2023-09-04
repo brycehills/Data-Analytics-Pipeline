@@ -1,8 +1,14 @@
-### Motivation: implement a data analysis pipeline: data acquisition, transformation and extraction, cleaning, analysis and sharing of results. The data is DBLP (Links to an external site.)
+## Motivation: 
+  * Implement a data analysis pipeline:
+    * data acquisition
+    * transformation and extraction
+    * cleaning
+    * analysis and sharing of results
+  * The data is DBLP (Links to an external site.)
 
 ### Resources: 
-* postgres, MYSQL, or SQLLite
-* starter code
+* postgres
+* python/SQL
 ---
 ### E/R Diagram
 <img src="screenshots/pubER.png" alt="alt text" width="700" height="400">
