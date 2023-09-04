@@ -1,4 +1,10 @@
-## Revelant Info
+---
+### Motivation: implement a data analysis pipeline: data acquisition, transformation and extraction, cleaning, analysis and sharing of results. The data is DBLP (Links to an external site.), the reference citation website created and maintained by Michael Ley. 
+
+### Resources: 
+
+* postgres, MYSQL, or SQLLite
+* starter code
 ---
 ### E/R Diagram
 <img src="screenshots/pubER.png" alt="alt text" width="700" height="400">
@@ -19,25 +25,20 @@
  * The histogram of the number of publications.
    * The second histogram is similarly produced, using a log scale.
 
+---
+
 ### Objectives: To get familiar with the main components of the data analytic pipeline: schema design, data acquisition, data transformation, and querying.
 
-Files: wrapper.py  Download wrapper.py, dblp.dtd,  Download dblp.dtd,createRawSchema.sql Download createRawSchema.sql
+* Files: wrapper.py  Download wrapper.py, dblp.dtd,  Download dblp.dtd,createRawSchema.sql Download createRawSchema.sql
 
-Google Drive (output files from wrapper.py): https://drive.google.com/drive/folders/1Jd8yLNdnyJgYMqOcILZLDTaQ5XGwOtlw?usp=sharing (Links to an external site.)
+* Google Drive (output files from wrapper.py): https://drive.google.com/drive/folders/1Jd8yLNdnyJgYMqOcILZLDTaQ5XGwOtlw?usp=sharing (Links to an external site.)
 
-Assignment tools: postgres, excel (or some other tool for visualization)
+* Assignment tools: postgres, excel (or some other tool for visualization)
 
-What to turn in: These files: pubER.pdf, createPubSchema.sql, importPubData.sql, solution.sql, graph.py, graph.pdf. Your solution.sql file should be executable using the command psql -f solution.sql
+* files: pubER.pdf, createPubSchema.sql, importPubData.sql, solution.sql, graph.py, graph.pdf. Your solution.sql file should be executable using the command psql -f solution.sql
+---
 
-### Motivation: implement a data analysis pipeline: data acquisition, transformation and extraction, cleaning, analysis and sharing of results. The data is DBLP (Links to an external site.), the reference citation website created and maintained by Michael Ley. 
-
-### Resources:
-
-#### postgres, MYSQL, or SQLLite
-
-starter code
-
-Problem 1: Conceptual Design
+### Problem 1: Conceptual Design
 Design and create a database schema about publications. We will refer to this schema as PubSchema, and to the data as PubData.
 
 E/R Diagram. Design the E/R diagram, consisting of the entity sets and relationships below. Draw the E/R diagram for this schema, identify all keys in all entity sets, and indicate the correct type of all relationships (many-many or many-one); make sure you use the ISA box where needed.
@@ -50,7 +51,9 @@ Inproceedings has additional attributes: booktitle, editor
 There is a many-many relationship Authored from Author to Publication
 Turn in the file pubER.pdf  which will contain the ER diagram 
 
-Problem 2: Schema Design
+---
+
+### Problem 2: Schema Design
 Here you will create the SQL tables in a database like postgres, MYSQL, or SQLLite. First, check that you have installed postgres (or another db) on your computer. Then, create an empty database by running the following commands (sample commands for postgres):
 
 $ createdb dblp
@@ -80,7 +83,9 @@ drop table if exists Author;
 ...
 Turn in the file createPubSchema.sql which contains all you create table statements. 
 
-Problem 3: Data Acquisition
+---
+
+### Problem 3: Data Acquisition
 Typically, this step consists of downloading data, or extracting it with a software tool, or inputting it manually, or all of the above. Then it involves writing and running some python script, called a wrapper that reformats the data into some CSV format that we can upload to the database.
 
 Download the DBLP data dblp.dtd  Download dblp.dtdand dblp.xml.gz from the dblp website (Links to an external site.), then unzip the xml file. Make sure you understand what data the the big xml file contains: look inside by running:
@@ -96,7 +101,9 @@ Next, edit the file createRawSchema.sql in the starter code to point to the corr
 psql -f createRawSchema.sql dblp
 This creates two tables, Pub and Field, then imports the data (which may take a few minutes). We will call these two tables RawSchema and RawData respectively.
 
-Problem 4: Querying the Raw Data
+---
+
+### Problem 4: Querying the Raw Data
 During typical data ingestion, you sometimes need to discover the true schema of the data, and for that you need to query the RawData.
 
 Start psql then type the following commands:
@@ -134,7 +141,9 @@ Your two queries above may be slow. Speed them up by creating appropriate indexe
 
 Turn in a file solution.sql consisting of SQL queries and all their answers inserted as comments
 
-Problem 5: Data Transformation.
+---
+
+### Problem 5: Data Transformation.
 Next, you will transform the DBLP data from RawSchema to PubSchema. This step is sometimes done using an ETL tool, but we will just use several SQL queries. You need to write queries to populate the tables in PubSchema. For example, to populate Article, you will likely run a SQL query like this:
 
 insert into Article (select ... from Pub, Field ... where ...);
@@ -165,7 +174,9 @@ Your challenge is to find out how to identify each author's correct Homepage. (A
 What if a publication in RawData has two titles? Or two publishers? Or two years? (You will encounter duplicate fields, but not necessarily these ones.) You may pick any of them, but you need to work a little to write this in SQL.
 Turn in the file importPubData.sql containing several insert, create Table, alter Table, etc statements.
 
-Problem 6: Run Data Analytic Queries
+---
+
+### Problem 6: Run Data Analytic Queries
 Finally, you reached the fun part. Write SQL queries to answer the following questions:
 
 Find the top 20 authors with the largest number of publications. (Runtime: under 10s)
@@ -186,7 +197,9 @@ Find the institutions that have published most papers in STOC; return the top 20
 
 Turn in SQL queries in the file called solution.sql.
 
-Problem 7: Data Visualization.
+---
+
+### Problem 7: Data Visualization.
 Here you are asked to create some histograms (graphs), by writing a python script that first runs a query, then produces a graph using the result of the query.
 
 Construct two histograms: the histogram of the number of collaborators, and the histogram of the number of publications. The first histograph will have these axes:
