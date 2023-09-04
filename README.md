@@ -5,7 +5,7 @@
     * cleaning
     * analysis and sharing of results
    
-## Resources: 
+## Resources/Tools/Languages: 
  * postgres
  * python/SQL
  * The data is DBLP (Links to an external site.)
