@@ -1,7 +1,7 @@
 ## Revelant Info
 
 
- <img src="screenshots/pubER.png" alt="alt text" width="800" height="400">
+ <img src="screenshots/pubER.png" alt="alt text" width="700" height="400">
 - Displays the E/R Diagram for this projects' Schema. Identifies all keys in all entity sets, and indicates the correct type of all relationships (many-many or many-one).
 
 ![Screenshot](screenshots/graphs.png)
