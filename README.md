@@ -7,13 +7,13 @@
 <img src="screenshots/pubER.png" alt="alt text" width="700" height="400">
 
 
-
-<img src="screenshots/graphs.png" alt="alt text" width="700" height="400">
 * Here you are asked to create some histograms (graphs), by writing a python script that first runs a query, then produces a graph using the result of the query.
 * Construct two histograms: the histogram of the number of collaborators, and the histogram of the number of publications. The first histograph will have these axes:
 ** the X axis is a number X=1,2,3,...
 ** the Y axis represents the number of authors with X collaborators: Y(0)= number of authors with 0 collaborators, Y(1) = number of authors with 1 collaborator, etc
 * Similarly for the second histogram. Try using a log scale, or a log-log scale, and choose the most appropriate. Feel free to produce a very nice graph (not necessarily a histogram).
+<img src="screenshots/graphs.png" alt="alt text" width="700" height="400">
+
 
 
 ### Objectives: To get familiar with the main components of the data analytic pipeline: schema design, data acquisition, data transformation, and querying.
