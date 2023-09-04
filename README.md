@@ -1,15 +1,11 @@
 ## Revelant Info
 
-![Screenshot](screenshots/graphs.png)
+
 ![Screenshot](screenshots/pubER.png)
+- Displays the E/R Diagram for this projects' Schema. Identifies all keys in all entity sets, and indicates the correct type of all relationships (many-many or many-one).
 
+![Screenshot](screenshots/graphs.png)
 
-![alt text](https://github.com/brycehills/Data-Analytics-Pipeline/blob/main/graph.pdf)  
-![alt text](https://github.com/brycehills/StrassenVsCudaMM/blob/main/resources/timing.JPG)  
-Though t
-  
-![alt text](https://github.com/brycehills/Data-Analytics-Pipeline/blob/main/pubER.pdf)  
-Additionally, 
 
 ### Objectives: To get familiar with the main components of the data analytic pipeline: schema design, data acquisition, data transformation, and querying.
 
