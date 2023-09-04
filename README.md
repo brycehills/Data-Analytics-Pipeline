@@ -1,10 +1,8 @@
 ## Revelant Info
-
+<img src="screenshots/pubER.png" alt="alt text" width="700" height="400">
 * Displays the E/R Diagram for this projects' Schema. 
 * Identifies all keys in all entity sets
 * indicates the correct type of all relationships (many-many or many-one).
-
-<img src="screenshots/pubER.png" alt="alt text" width="700" height="400">
 
 * Here you are asked to create some histograms (graphs), by writing a python script that first runs a query, then produces a graph using the result of the query.
 * Construct two histograms: the histogram of the number of collaborators, and the histogram of the number of publications. The first histograph will have these axes:
