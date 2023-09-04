@@ -43,9 +43,8 @@
 ---
 
 ### Problem 1: Conceptual Design
-Design and create a database schema about publications. We will refer to this schema as PubSchema, and to the data as PubData.
-
-E/R Diagram. Design the E/R diagram, consisting of the entity sets and relationships below. Draw the E/R diagram for this schema, identify all keys in all entity sets, and indicate the correct type of all relationships (many-many or many-one); make sure you use the ISA box where needed.
+* Design and create a database schema about publications. We will refer to this schema as PubSchema, and to the data as PubData.
+* E/R Diagram. Design the E/R diagram, consisting of the entity sets and relationships below. Draw the E/R diagram for this schema, identify all keys in all entity sets, and indicate the correct type of all relationships (many-many or many-one); make sure you use the ISA box where needed.
 Author has attributes: id (a key; must be unique), name, and homepage (a URL)
 Publication has attributes: pubid (the key -- an integer), pubkey (an alternative key, text; must be unique), title, and year. It has the following subclasses:
 Article has additional attributes: journal, month, volume, number
@@ -53,21 +52,20 @@ Book has additional attributes: publisher, isbn
 Incollection has additional attributes: booktitle, publisher, isbn
 Inproceedings has additional attributes: booktitle, editor
 There is a many-many relationship Authored from Author to Publication
-Turn in the file pubER.pdf  which will contain the ER diagram 
+* Turn in the file pubER.pdf which will contain the ER diagram 
 
 ---
 
 ### Problem 2: Schema Design
-Here you will create the SQL tables in a database like postgres, MYSQL, or SQLLite. First, check that you have installed postgres (or another db) on your computer. Then, create an empty database by running the following commands (sample commands for postgres):
-
-$ createdb dblp
-If you need to restart, then delete it by running:
-
-$ dropdb dblp
-To run queries in postgres, type:
-
-$ psql dblp
-then type in your SQL commands. Remember three special commands:
+* Here you will create the SQL tables in a database like postgres, MYSQL, or SQLLite.
+* First, check that you have installed postgres (or another db) on your computer.
+* Then, create an empty database by running the following commands (sample commands for postgres):
+* $ createdb dblp
+* If you need to restart, then delete it by running:
+* $ dropdb dblp
+* To run queries in postgres, type:
+* $ psql dblp
+* then type in your SQL commands. Remember three special commands:
 
 \q -- quit psql
 \h -- help
