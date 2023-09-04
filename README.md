@@ -1,4 +1,14 @@
-Objectives: To get familiar with the main components of the data analytic pipeline: schema design, data acquisition, data transformation, and querying.
+## Revelant Info
+
+![alt text](https://github.com/brycehills/Data-Analytics-Pipeline/puber.pdf)  
+Though t
+  
+    
+   
+![alt text](https://github.com/brycehills/Data-Analytics-Pipeline/graph.pdf)  
+Additionally, 
+
+### Objectives: To get familiar with the main components of the data analytic pipeline: schema design, data acquisition, data transformation, and querying.
 
 Files: wrapper.py  Download wrapper.py, dblp.dtd,  Download dblp.dtd,createRawSchema.sql Download createRawSchema.sql
 
@@ -8,11 +18,11 @@ Assignment tools: postgres, excel (or some other tool for visualization)
 
 What to turn in: These files: pubER.pdf, createPubSchema.sql, importPubData.sql, solution.sql, graph.py, graph.pdf. Your solution.sql file should be executable using the command psql -f solution.sql
 
-Motivation: In this homework you will implement a basic data analysis pipeline: data acquisition, transformation and extraction, cleaning, analysis and sharing of results. The data is DBLP (Links to an external site.), the reference citation website created and maintained by Michael Ley. 
+### Motivation: implement a data analysis pipeline: data acquisition, transformation and extraction, cleaning, analysis and sharing of results. The data is DBLP (Links to an external site.), the reference citation website created and maintained by Michael Ley. 
 
-Resources:
+### Resources:
 
-postgres, MYSQL, or SQLLite
+#### postgres, MYSQL, or SQLLite
 
 starter code
 
