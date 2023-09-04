@@ -111,8 +111,8 @@ This creates two tables, Pub and Field, then imports the data (which may take a 
 
 * Start psql then type the following commands:
 
-select * from Pub limit 50;
-select * from Field limit 50;
+  * select * from Pub limit 50;  
+select * from Field limit 50;  
 For example, go to the dblp website (Links to an external site.), check out this paper, search for Henry M. Levy, look for the "Vanish" paper, and export the entry in BibTeX format. You should see the following in your browser
 
   * @inproceedings{DBLP:conf/uss/GeambasuKLL09,  
@@ -131,13 +131,14 @@ For example, go to the dblp website (Links to an external site.), check out this
   biburl    = {http://dblp.org/rec/bib/conf/uss/GeambasuKLL09},  
   bibsource = {dblp computer science bibliography, http://dblp.org}  
 }  
-The key of this entry is conf/uss/GeambasuKLL09. Try using this info by running this SQL query:
-select * from Pub p, Field f where p.k='conf/uss/GeambasuKLL09' and f.k='conf/uss/GeambasuKLL09'
-Write SQL Queries to answer the following questions using RawSchema:
+
+  * The key of this entry is conf/uss/GeambasuKLL09. Try using this info by running this SQL query:  
+select * from Pub p, Field f where p.k='conf/uss/GeambasuKLL09' and f.k='conf/uss/GeambasuKLL09'  
+Write SQL Queries to answer the following questions using RawSchema:  
 
 * For each type of publication, count the total number of publications of that type. Your query should return a set of (publication-type, count) pairs. For example (article, 20000), (inproceedings, 30000), ... (not the real answer).
 
-We say that a field occurs in a publication type, if there exists at least one publication of that type having that field. For example, publisher occurs in incollection, but publisher does not occur in inproceedings. Find the fields that occur in all publications types. Your query should return a set of field names: for example it may return title, if title occurs in all publication types (article, inproceedings, etc. notice that title does not have to occur in every publication instance, only in some instance of every type), but it should not return publisher (since the latter does not occur in any publication of type inproceedings).
+  * We say that a field occurs in a publication type, if there exists at least one publication of that type having that field. For example, publisher occurs in incollection, but publisher does not occur in inproceedings. Find the fields that occur in all publications types. Your query should return a set of field names: for example it may return title, if title occurs in all publication types (article, inproceedings, etc. notice that title does not have to occur in every publication instance, only in some instance of every type), but it should not return publisher (since the latter does not occur in any publication of type inproceedings).
 
 * Your two queries above may be slow. Speed them up by creating appropriate indexes, using the CREATE INDEX statement. You also need indexes on Pub and Field for the next question; create all indices you need on RawSchema
 
