@@ -60,7 +60,7 @@ There is a many-many relationship Authored from Author to Publication
 * Here you will create the SQL tables in a database like postgres, MYSQL, or SQLLite.
 * First, check that you have installed postgres (or another db) on your computer. Then, create an empty database by running the following commands (sample commands for postgres):
 
-$ createdb dblp
+  * $ createdb dblp
 If you need to restart, then delete it by running:
 $ dropdb dblp
 To run queries in postgres, type:
