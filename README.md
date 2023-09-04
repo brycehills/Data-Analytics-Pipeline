@@ -58,13 +58,14 @@ There is a many-many relationship Authored from Author to Publication
 
 ### Problem 2: Schema Design
 * Here you will create the SQL tables in a database like postgres, MYSQL, or SQLLite.
-* First, check that you have installed postgres (or another db) on your computer.
-* Then, create an empty database by running the following commands (sample commands for postgres):
-* $ createdb dblp
-* If you need to restart, then delete it by running:
-* $ dropdb dblp
-* To run queries in postgres, type:
-* $ psql dblp
+* First, check that you have installed postgres (or another db) on your computer. Then, create an empty database by running the following commands (sample commands for postgres):
+
+$ createdb dblp
+If you need to restart, then delete it by running:
+$ dropdb dblp
+To run queries in postgres, type:
+$ psql dblp
+
 * then type in your SQL commands. Remember three special commands:
 
 \q -- quit psql
@@ -76,10 +77,10 @@ create Table Author (...);
 ...
 Choose int and text for all data types. Create keys, foreign keys, and unique constraints, as needed; you may either do it within CREATE TABLE, or postpone this for later and use ALTER TABLE. 
 
-Write all your commands in a file called createPubSchema.sql. You can execute them in two ways. Start postgres interactively and copy/paste your commands one by one. Or, from the command line run:
+* Write all your commands in a file called createPubSchema.sql. You can execute them in two ways. Start postgres interactively and copy/paste your commands one by one. Or, from the command line run:
 
 psql -f createPubSchema.sql dblp
-Hint: for debugging purposes, insert drop Table commands at the beginning of the createPubSchema.sql file:
+* Hint: for debugging purposes, insert drop Table commands at the beginning of the createPubSchema.sql file:
 
 drop table if exists Author;
 ...
@@ -88,17 +89,17 @@ Turn in the file createPubSchema.sql which contains all you create table stateme
 ---
 
 ### Problem 3: Data Acquisition
-Typically, this step consists of downloading data, or extracting it with a software tool, or inputting it manually, or all of the above. Then it involves writing and running some python script, called a wrapper that reformats the data into some CSV format that we can upload to the database.
+* Typically, this step consists of downloading data, or extracting it with a software tool, or inputting it manually, or all of the above. Then it involves writing and running some python script, called a wrapper that reformats the data into some CSV format that we can upload to the database.
 
-Download the DBLP data dblp.dtd  Download dblp.dtdand dblp.xml.gz from the dblp website (Links to an external site.), then unzip the xml file. Make sure you understand what data the the big xml file contains: look inside by running:
+* Download the DBLP data dblp.dtd  Download dblp.dtdand dblp.xml.gz from the dblp website (Links to an external site.), then unzip the xml file. Make sure you understand what data the the big xml file contains: look inside by running:
 
 more dblp.xml
-If needed, edit the wrapper.py  Download wrapper.pyand update the correct location of dblp.xml and the output files pubFile.txt and fieldFile.txt, then run:
+* If needed, edit the wrapper.py  Download wrapper.pyand update the correct location of dblp.xml and the output files pubFile.txt and fieldFile.txt, then run:
 
 python wrapper.py
 This will take several minutes, and produces two large files: pubFile.txt and fieldFile.txt. Before you proceed, make sure you understand what happened during this step, by looking inside these two files: they are tab-separated files, ready to be imported in postgres.
 
-Next, edit the file createRawSchema.sql in the starter code to point to the correct path of pubFile.txt and fieldFile.txt: they must be absolute paths, e.g. /home/myname/pubFile.txt. Then run:
+* Next, edit the file createRawSchema.sql in the starter code to point to the correct path of pubFile.txt and fieldFile.txt: they must be absolute paths, e.g. /home/myname/pubFile.txt. Then run:
 
 psql -f createRawSchema.sql dblp
 This creates two tables, Pub and Field, then imports the data (which may take a few minutes). We will call these two tables RawSchema and RawData respectively.
@@ -106,9 +107,9 @@ This creates two tables, Pub and Field, then imports the data (which may take a 
 ---
 
 ### Problem 4: Querying the Raw Data
-During typical data ingestion, you sometimes need to discover the true schema of the data, and for that you need to query the RawData.
+* During typical data ingestion, you sometimes need to discover the true schema of the data, and for that you need to query the RawData.
 
-Start psql then type the following commands:
+* Start psql then type the following commands:
 
 select * from Pub limit 50;
 select * from Field limit 50;
@@ -131,27 +132,26 @@ For example, go to the dblp website (Links to an external site.), check out this
   bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 The key of this entry is conf/uss/GeambasuKLL09. Try using this info by running this SQL query:
-
 select * from Pub p, Field f where p.k='conf/uss/GeambasuKLL09' and f.k='conf/uss/GeambasuKLL09'
 Write SQL Queries to answer the following questions using RawSchema:
 
-For each type of publication, count the total number of publications of that type. Your query should return a set of (publication-type, count) pairs. For example (article, 20000), (inproceedings, 30000), ... (not the real answer).
+* For each type of publication, count the total number of publications of that type. Your query should return a set of (publication-type, count) pairs. For example (article, 20000), (inproceedings, 30000), ... (not the real answer).
 
 We say that a field occurs in a publication type, if there exists at least one publication of that type having that field. For example, publisher occurs in incollection, but publisher does not occur in inproceedings. Find the fields that occur in all publications types. Your query should return a set of field names: for example it may return title, if title occurs in all publication types (article, inproceedings, etc. notice that title does not have to occur in every publication instance, only in some instance of every type), but it should not return publisher (since the latter does not occur in any publication of type inproceedings).
 
-Your two queries above may be slow. Speed them up by creating appropriate indexes, using the CREATE INDEX statement. You also need indexes on Pub and Field for the next question; create all indices you need on RawSchema
+* Your two queries above may be slow. Speed them up by creating appropriate indexes, using the CREATE INDEX statement. You also need indexes on Pub and Field for the next question; create all indices you need on RawSchema
 
-Turn in a file solution.sql consisting of SQL queries and all their answers inserted as comments
+* Turn in a file solution.sql consisting of SQL queries and all their answers inserted as comments
 
 ---
 
 ### Problem 5: Data Transformation.
-Next, you will transform the DBLP data from RawSchema to PubSchema. This step is sometimes done using an ETL tool, but we will just use several SQL queries. You need to write queries to populate the tables in PubSchema. For example, to populate Article, you will likely run a SQL query like this:
+* Next, you will transform the DBLP data from RawSchema to PubSchema. This step is sometimes done using an ETL tool, but we will just use several SQL queries. You need to write queries to populate the tables in PubSchema. For example, to populate Article, you will likely run a SQL query like this:
 
 insert into Article (select ... from Pub, Field ... where ...);
 The RawSchema and PubSchema are quite different, so you will need to go through some trial and error to get the transformation right. Here are a few hints (but your approach may vary):
 
-create temporary tables (and indices) to speedup the data transformation. Remember to drop all your temp tables when you are done
+* create temporary tables (and indices) to speedup the data transformation. Remember to drop all your temp tables when you are done
 
 it is very inefficient to bulk insert into a table that contains a key and/or foreign keys (why?); to speed up, you may drop the key/foreign key constraints, perform the bulk insertion, then alter Table to create the constraints.
 
@@ -173,7 +173,7 @@ Get it? Now you know Levy's homepage. However, you are not there yet. Some www e
 select z.* from Pub x, Field y, Field z where x.k=y.k and y.k=z.k and x.p='www' and y.p='author' and y.v='Dan Suciu'
 Your challenge is to find out how to identify each author's correct Homepage. (A small number of authors have two correct, but distinct homepages; you may choose any of them to insert in Author)
 
-What if a publication in RawData has two titles? Or two publishers? Or two years? (You will encounter duplicate fields, but not necessarily these ones.) You may pick any of them, but you need to work a little to write this in SQL.
+* What if a publication in RawData has two titles? Or two publishers? Or two years? (You will encounter duplicate fields, but not necessarily these ones.) You may pick any of them, but you need to work a little to write this in SQL.
 Turn in the file importPubData.sql containing several insert, create Table, alter Table, etc statements.
 
 ---
