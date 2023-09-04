@@ -115,22 +115,22 @@ select * from Pub limit 50;
 select * from Field limit 50;
 For example, go to the dblp website (Links to an external site.), check out this paper, search for Henry M. Levy, look for the "Vanish" paper, and export the entry in BibTeX format. You should see the following in your browser
 
-@inproceedings{DBLP:conf/uss/GeambasuKLL09,
-  author    = {Roxana Geambasu and
-               Tadayoshi Kohno and
-               Amit A. Levy and
-               Henry M. Levy},
-  title     = {Vanish: Increasing Data Privacy with Self-Destructing Data},
-  booktitle = {18th {USENIX} Security Symposium, Montreal, Canada, August 10-14,
-               2009, Proceedings},
-  pages     = {299--316},
-  year      = {2009},
-  crossref  = {DBLP:conf/uss/2009},
-  url       = {http://www.usenix.org/events/sec09/tech/full_papers/geambasu.pdf},
-  timestamp = {Thu, 15 May 2014 18:36:21 +0200},
-  biburl    = {http://dblp.org/rec/bib/conf/uss/GeambasuKLL09},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
-}
+  * @inproceedings{DBLP:conf/uss/GeambasuKLL09,  
+  author    = {Roxana Geambasu and  
+               Tadayoshi Kohno and  
+               Amit A. Levy and  
+               Henry M. Levy},  
+  title     = {Vanish: Increasing Data Privacy with Self-Destructing Data},  
+  booktitle = {18th {USENIX} Security Symposium, Montreal, Canada, August 10-14,  
+               2009, Proceedings},  
+  pages     = {299--316},  
+  year      = {2009},  
+  crossref  = {DBLP:conf/uss/2009},  
+  url       = {http://www.usenix.org/events/sec09/tech/full_papers/geambasu.pdf},  
+  timestamp = {Thu, 15 May 2014 18:36:21 +0200},  
+  biburl    = {http://dblp.org/rec/bib/conf/uss/GeambasuKLL09},  
+  bibsource = {dblp computer science bibliography, http://dblp.org}  
+}  
 The key of this entry is conf/uss/GeambasuKLL09. Try using this info by running this SQL query:
 select * from Pub p, Field f where p.k='conf/uss/GeambasuKLL09' and f.k='conf/uss/GeambasuKLL09'
 Write SQL Queries to answer the following questions using RawSchema:
