@@ -5,8 +5,6 @@
     * cleaning
     * analysis and sharing of results
    
- ---
-
 ## Resources: 
  * postgres
  * python/SQL
