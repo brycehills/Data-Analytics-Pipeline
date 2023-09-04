@@ -1,7 +1,7 @@
 ## Revelant Info
 
 
-![Screenshot](screenshots/pubER.png =250x250)
+![Screenshot](screenshots/pubER.png)
 - Displays the E/R Diagram for this projects' Schema. Identifies all keys in all entity sets, and indicates the correct type of all relationships (many-many or many-one).
 
 ![Screenshot](screenshots/graphs.png)
