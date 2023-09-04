@@ -5,10 +5,10 @@
     * cleaning
     * analysis and sharing of results
 
-### Resources: 
-* postgres
-* python/SQL
-* The data is DBLP (Links to an external site.)
+* ### Resources: 
+ * postgres
+ * python/SQL
+ * The data is DBLP (Links to an external site.)
 ---
 ### E/R Diagram
 <img src="screenshots/pubER.png" alt="alt text" width="700" height="400">
