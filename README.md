@@ -1,5 +1,9 @@
 ## Revelant Info
 
+![Screenshot](screenshots/graphs.png)
+![Screenshot](screenshots/pubER.png)
+
+
 ![alt text](https://github.com/brycehills/Data-Analytics-Pipeline/blob/main/graph.pdf)  
 ![alt text](https://github.com/brycehills/StrassenVsCudaMM/blob/main/resources/timing.JPG)  
 Though t
