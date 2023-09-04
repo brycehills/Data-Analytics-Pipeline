@@ -4,8 +4,10 @@
     * transformation and extraction
     * cleaning
     * analysis and sharing of results
+   
+ ---
 
-* ### Resources: 
+## Resources: 
  * postgres
  * python/SQL
  * The data is DBLP (Links to an external site.)
