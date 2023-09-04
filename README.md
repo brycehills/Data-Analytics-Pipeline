@@ -1,6 +1,6 @@
 ## Revelant Info
 
-![alt text](https://github.com/brycehills/Data-Analytics-Pipeline/puber.pdf)  
+![alt text](graph.pdf)  
 Though t
   
     
